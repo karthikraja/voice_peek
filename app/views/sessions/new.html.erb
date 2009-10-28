@@ -1,0 +1,32 @@
+<div id="main_container">
+  <div id="middle_box">
+    <div class="middle_box_content"></div>
+  </div>
+  <div id="middle_box_content">
+  <h1>User Login</h1>
+
+      <% form_tag session_path do -%>
+        <p><label for="login">Login</label>
+        <%= text_field_tag 'login' %></p>
+
+        <p><label for="password">Password</label>
+        <%= password_field_tag 'password' %></p>
+
+        <p><label for="remember_me">Remember me</label>
+        <%= check_box_tag 'remember_me' %>
+        </p>
+
+        <p><%= submit_tag 'Log in',:class => "form_submit" %></p>
+        <p>
+          <ul class="frontdiv">
+          <li><%= link_to "Forgot Password?", forgot_password_url   %></li>
+          <li><%= link_to "Change Password?", forgot_password_url   %></li>
+          <li><%= link_to "New user", signup_url   %></li>
+          </ul>
+        </p>
+      <% end -%>
+       <div id="flash_msg">
+        <span><p style="color: blue;"><%= flash[:notice] %></p></span>
+      </div>
+  </div>  
+</div>

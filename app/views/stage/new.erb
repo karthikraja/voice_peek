@@ -1,0 +1,21 @@
+<div id="main_container">
+<%= error_messages_for :stage %>
+
+<% form_for(:stage, :url => { :action => "create" },
+                      :html => { :multipart => true }) do |f| -%>
+  <p>
+    <label for="upload_data">Upload the Audio/Video:</label>
+    <%= f.file_field :uploaded_data %>
+
+  </p>
+  <p>
+    <%= submit_tag 'Create' %>
+  </p>
+
+  
+<% end -%>
+
+<div id="flash_msg">
+        <span><p style="color: blue;"><%= flash[:notice] %></p></span>
+</div>
+      </div>

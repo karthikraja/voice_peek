@@ -1,0 +1,19 @@
+<div id="main_container">
+  <h1>Listing Audio/Video</h1>
+
+<ul id="stage">
+<% @stages.each do |stage| %>
+<li id="stage_<%= stage.id %>">
+<% if !stage.image? %>
+<%= link_to stage.filename, {:action=>'show', :file=>stage.public_filename},:target => '_blank' %><br />
+<% end %>
+</li>
+<% end %>
+</ul>
+<br />
+
+<%= link_to 'New upload', :action=>'new', :id=>session[:user_id]%>
+<%= link_to 'Logout', logout_url %>
+</div>
+
+

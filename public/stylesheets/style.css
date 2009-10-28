@@ -1,0 +1,174 @@
+
+
+body {
+	color: black;
+	font-size: 73%;  /* Enables font size scaling in MSIE */
+	background:url(/images/bg.jpg) no-repeat top center #97cae4;
+	margin:0px;
+	padding:0px;
+	font-family:Arial, Helvetica, sans-serif;
+	color: #3b5564;
+}
+
+#main_container{
+width:auto;
+height:auto;
+margin: 2em 10em 3em;
+padding: .3EM;
+background-color: #DDE8ED;
+}
+
+#middle_box{
+width:900px;
+height:208px;
+margin:auto;
+background: transparent url(/images/mm.jpg) no-repeat center;
+}
+#middle_box_content{
+margin: 2em 10em 3em;
+padding: .3EM;
+}
+/* links */
+a {
+	color: #4284B0;
+	background-color: inherit;
+	text-decoration: none;
+}
+a:hover {
+	color: #9EC068;
+	background-color: inherit;
+}
+
+/* headers */
+h1, h2, h3 {
+	font: bold 1em 'Trebuchet MS', Arial, Sans-serif;
+	color: #333;
+}
+h1 { font-size: 1.5em; color: #6297BC; }
+h2 { font-size: 1.4em; text-transform:uppercase;}
+h3 { font-size: 1.3em; }
+
+p, h1, h2, h3, h4 {
+	margin: 10px 15px;
+}
+
+/* images */
+img {
+	border: 2px solid #CCC;
+}
+img.no-border {
+	border: none;
+}
+img.float-right {
+  margin: 5px 0px 5px 15px;
+}
+img.float-left {
+  margin: 5px 15px 5px 0px;
+}
+a img {
+  border: 2px solid #568EB6;
+}
+a:hover img {
+  border: 2px solid #CCC !important; /* IE fix*/
+  border: 2px solid #568EB6;
+}
+
+#code,#errorExplanation ul li  {
+  margin: 10px 10px 10px 15px;
+  padding: 10px 20px;
+  text-align: left;
+  display: block;
+  overflow: auto;
+  font: 500 1em/1.5em 'Lucida Console', 'courier new', monospace;
+  /* white-space: pre; */
+  background: #FAF6FF;
+  border: 1px solid #f2f2f2;
+  border-left: 4px solid #4284B0;
+}
+#errorExplanation ul li{
+     background: #FEFEFF;
+}
+form {
+	margin:5px; padding: 0;
+	border: 1px solid #f2f2f2;
+	background-color: #F2F2F2;
+}
+#remember_me{
+    display:inline-block;
+    margin: 5px 2px;
+}
+label {
+	display:inline-block;
+	font-weight:normal;
+    text-align:right;
+    width:150px;
+	padding:2px;
+	font: normal .9em Verdana, sans-serif;
+	
+	/*margin:5px 2px;*/
+}
+.form_submit{
+    margin-left: 180px;
+    padding: .3em;
+
+}
+input {
+	padding: 2px;
+    margin: 2px;
+	border:1px solid #eee;
+	font: normal 1em Verdana, sans-serif;
+	color:#777;
+}
+textarea {
+	width:300px;
+	padding:2px;
+	font: normal 1em Verdana, sans-serif;
+	border:1px solid #eee;
+	height:100px;
+	display:block;
+    color:#777;
+}
+
+#signup form p input,#signup form p cite {
+    font: normal .9em Verdana, sans-serif;
+	color:#777;
+}
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+.fieldWithErrors {
+    background-color:red;
+    margin:0;
+    padding:0;
+    clear:both;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+.frontdiv {
+    list-style:none;
+    padding-left:20px;
+    margin-bottom:5px;
+    margin-left:110px;
+}
+.frontdiv li{
+    padding-bottom:5px;
+    padding-left:15px;
+    display: inline-block;
+}
+#flash_msg{
+   padding-left:20px;
+    margin-bottom:5px;
+    margin-left:110px;
+}
+
+

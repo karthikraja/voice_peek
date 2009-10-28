@@ -1,0 +1,9 @@
+<div id="main_container">
+  <h1>File Upload</h1>
+<% form_tag({:action => 'uploadfile'},
+                        :multipart => true) do %>
+<p><label for="upload_file">Select File</label> :
+<%= file_field 'upload', 'datafile' %></p>
+<%= submit_tag "Upload" %>
+<% end %>
+</div>
