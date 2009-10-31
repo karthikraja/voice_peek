@@ -13,7 +13,9 @@ config.action_controller.perform_caching             = true
 config.action_view.cache_template_loading            = true
 
 # Enable serving of images, stylesheets, and javascripts from an asset server
-# config.action_controller.asset_host                  = "http://assets.example.com"
+ config.action_controller.asset_host                  = "http://ec2-75-101-255-178.compute-1.amazonaws.com/"
 
 # Disable delivery errors, bad email addresses will be ignored
-# config.action_mailer.raise_delivery_errors = false
+ config.action_mailer.raise_delivery_errors = false
+
+SITE="http://ec2-75-101-255-178.compute-1.amazonaws.com/"
