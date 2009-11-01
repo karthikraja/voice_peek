@@ -13,7 +13,7 @@ def create
     flash[:notice] = 'File was successfully created.'
     redirect_to :action=>'index',:id=>session[:user_id]
   else
-    flash[:notice] = 'File was unsuccessfully created.'
+    flash[:notice] = 'File creation was unsuccessful.'
     render :action => :new
   end
 end

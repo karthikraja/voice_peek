@@ -19,5 +19,4 @@ config.action_mailer.raise_delivery_errors = true
 
 
 
-
-SITE="http://localhost:3000"
+SITE="http://ec2-75-101-255-178.compute-1.amazonaws.com/"
