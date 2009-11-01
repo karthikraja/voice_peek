@@ -1,19 +1,26 @@
 <div id="main_container">
   <h1>Listing Audio/Video</h1>
 
-<ul id="stage">
-<% @stages.each do |stage| %>
-<li id="stage_<%= stage.id %>">
-<% if !stage.image? %>
-<%= link_to stage.filename, {:action=>'show', :file=>stage.public_filename},:target => '_blank' %><br />
-<% end %>
-</li>
-<% end %>
-</ul>
-<br />
+  <div id="middle_box_content">
 
-<%= link_to 'New upload', :action=>'new', :id=>session[:user_id]%>
-<%= link_to 'Logout', logout_url %>
+    <ul id="stage">
+      <% @stages.each do |stage| %>
+        <li id="stage_<%= stage.id %>">
+          <% if !stage.image? %>
+              <%= link_to stage.filename, {:action=>'show', :file=>stage.public_filename},:target => '_blank' %><br />
+              <textarea class="inputdisabled" disabled="disabled"><%=h stage.ischeck %></textarea>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+    <br />
+    <%= link_to 'New upload', :action=>'new', :id=>session[:user_id]%>
+    <%= link_to 'Logout', logout_url %>
+    <div id="flash_msg">
+      <span><p style="color: blue;"><%= flash[:notice] %></p></span>
+    </div>
+  </div>
 </div>
+
 
 

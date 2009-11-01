@@ -19,7 +19,7 @@ Rails::Initializer.run do |config|
     :secret      => '76b84ec6b66183ff041f497c9c1546e12f8d312232352b0f4615a4300b6aae4f6d0498945787ae5c122518addc4b469cbde305161062d15260424c6ef59601fc'
   }
 
-
+SITE="http://ec2-75-101-255-178.compute-1.amazonaws.com/"
 
 
   # Use the database for sessions instead of the cookie-based default,

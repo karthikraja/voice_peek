@@ -1,21 +1,26 @@
 <div id="main_container">
-<%= error_messages_for :stage %>
+  <%= error_messages_for :stage %>
 
-<% form_for(:stage, :url => { :action => "create" },
-                      :html => { :multipart => true }) do |f| -%>
-  <p>
-    <label for="upload_data">Upload the Audio/Video:</label>
-    <%= f.file_field :uploaded_data %>
+  <div id="middle_box_content">
+    <% form_for(:stage, :url => { :action => "create" },
+      :html => { :multipart => true }) do |f| -%>
+      <p>
+        <label for="upload_data">Upload the Audio/Video:</label>
+        <%= f.file_field :uploaded_data %>
+      </p>
+      <p>
+        <%= f.label :comments,'Description' %>
+        <%= f.text_area :ischeck, :cols=>80,:rows=>80 %>
+      </p>
+      <p>
+        <%= submit_tag 'Create' %>
+      </p>
 
-  </p>
-  <p>
-    <%= submit_tag 'Create' %>
-  </p>
 
-  
-<% end -%>
+    <% end -%>
 
-<div id="flash_msg">
-        <span><p style="color: blue;"><%= flash[:notice] %></p></span>
+    <div id="flash_msg">
+      <span><p style="color: blue;"><%= flash[:notice] %></p></span>
+    </div>
+  </div>
 </div>
-      </div>
