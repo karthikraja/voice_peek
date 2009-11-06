@@ -1,4 +1,21 @@
 <div id="main_container">
-  <%= player({:file =>@location},{:width => 640, :height => 480}) %>
+  <div id="header">
+    <ul>
+      <li><span id="current"><%= link_to 'New upload', :action=>'new', :id=>session[:user_id]%></span></li>
+      <li><span><%= link_to "Logout", logout_url %></span></li>
+    </ul>
+  </div>
+  <div id="flash_msg">
+      <span><p style="color: blue;"><%= flash[:notice] %></p></span>
+    </div>
+  <h1>Listing Audio/Video : </h1><h4>Click on the link to play the clip</h4>
 
+
+  <div id="middle_box_content">
+    <div id="left_panel">
+    <%=  render :partial=>"show", :collection=>@stages, :as=>:stage %>
+    <%= player({:file =>@location,:author=>@user,:title=>@filename,:playlistsize=>45, :skin=>'stijl',:autostart=>'true',:playlist=>'bottom'},{}) %>
+    <br />
+   </div>
+  </div>
 </div>
