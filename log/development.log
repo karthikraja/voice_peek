@@ -1,330 +1,79 @@
-# Logfile created on Tue Oct 27 18:55:31 +0800 2009  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-  [4;36;1mSQL (123.0ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (326.0ms)[0m   [0mCREATE TABLE `stages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `parent_id` int(11), `size` int(11), `user_id` int(11), `content_type` varchar(255), `filename` varchar(255), `ischeck` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
-  [4;36;1mSQL (52.0ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (92.0ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login` varchar(255), `email` varchar(255), `remember_token` varchar(255), `crypted_password` varchar(40), `password_reset_code` varchar(40), `salt` varchar(40), `activation_code` varchar(40), `remember_token_expires_at` datetime, `activated_at` datetime, `deleted_at` datetime, `state` varchar(255) DEFAULT 'passive', `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
-  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (46.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
-  [4;36;1mSQL (280.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
-  [4;35;1mSQL (2.0ms)[0m   [0mSHOW TABLES[0m
-  [4;36;1mSQL (14.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
-  [4;35;1mSQL (7.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091024130843')[0m
-  [4;36;1mSQL (2.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('1')[0m
   [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
-Migrating to CreateUsers (1)
-Migrating to CreateStages (20091024130843)
-  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
-  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (147.0ms)[0m   [0mSHOW FIELDS FROM `stages`[0m
-  [4;36;1mSQL (6.0ms)[0m   [0;1mdescribe `stages`[0m
-  [4;35;1mSQL (23.0ms)[0m   [0mSHOW KEYS FROM `stages`[0m
-  [4;36;1mSQL (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
-  [4;35;1mSQL (6.0ms)[0m   [0mdescribe `users`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing SessionsController#new (for 127.0.0.1 at 2009-10-27 18:57:37) [GET]
+Processing SessionsController#new (for 127.0.0.1 at 2009-11-06 23:33:47) [GET]
 Rendering template within layouts/application
 Rendering sessions/new
-Completed in 81ms (View: 74, DB: 0) | 200 OK [http://localhost/]
-  [4;36;1mSQL (3.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing UsersController#new (for 127.0.0.1 at 2009-10-27 18:57:52) [GET]
-Rendering template within layouts/application
-Rendering users/new
-Completed in 48ms (View: 41, DB: 3) | 200 OK [http://localhost/signup]
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://127.0.0.1/]
   [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
   [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing UsersController#create (for 127.0.0.1 at 2009-10-27 18:58:37) [POST]
-  Parameters: {"user"=>{"password_confirmation"=>"kil2972", "password"=>"kil2972", "login"=>"karthik", "email"=>"karthikraja.sr@gmail.com"}, "commit"=>"Sign up", "authenticity_token"=>"TfPQEDFL0/xZznRb6K1LgZLLhBjGxQ2RdPfovTc0+Mc="}
-  [4;36;1mUser Columns (66.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
-  [4;35;1mUser Exists (68.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'karthik') LIMIT 1[0m
-  [4;36;1mUser Exists (1.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'karthikraja.sr@gmail.com') LIMIT 1[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
-  [4;36;1mUser Create (0.0ms)[0m   [0;1mINSERT INTO `users` (`salt`, `activated_at`, `updated_at`, `crypted_password`, `deleted_at`, `activation_code`, `remember_token_expires_at`, `password_reset_code`, `remember_token`, `login`, `email`, `state`, `created_at`) VALUES('e6a5fd7c4cff55bac9d4ffa5d4b02707533d8b71', NULL, '2009-10-27 18:58:38', '31cfcc7eacc3a217ad44688425952ea3d423aa7a', NULL, '9517922ef1d990c380e04fed38ef1623fe09a24d', NULL, NULL, NULL, 'karthik', 'karthikraja.sr@gmail.com', 'pending', '2009-10-27 18:58:38')[0m
-  [4;35;1mUser Load (18.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
-Sent mail to karthikraja.sr@gmail.com
-
-Date: Tue, 27 Oct 2009 18:58:38 +0800
-To: karthikraja.sr@gmail.com
-Subject: [MinuteMarker Android App] New account information Please activate your new account
-Mime-Version: 1.0
-Content-Type: text/html; charset=utf-8
-
-Your account has been created.
-
-  Username: karthik
-  Password: kil2972
-
-Visit this url to activate your account:
-
-  http://localhost:3000/activate/9517922ef1d990c380e04fed38ef1623fe09a24d
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
-  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
-Rendering template within layouts/application
-Rendering users/create
-Completed in 10693ms (View: 23, DB: 156) | 200 OK [http://localhost/users]
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing SessionsController#new (for 127.0.0.1 at 2009-10-27 18:59:30) [GET]
+Processing SessionsController#new (for 127.0.0.1 at 2009-11-06 23:33:56) [GET]
 Rendering template within layouts/application
 Rendering sessions/new
-Completed in 19ms (View: 14, DB: 0) | 200 OK [http://localhost/]
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing SessionsController#create (for 127.0.0.1 at 2009-10-27 18:59:41) [POST]
-  Parameters: {"commit"=>"Log in", "authenticity_token"=>"TfPQEDFL0/xZznRb6K1LgZLLhBjGxQ2RdPfovTc0+Mc=", "login"=>"karthik", "password"=>"kil2972"}
-  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'karthik') AND (users.state = 'active') LIMIT 1[0m
-Redirected to http://localhost:3001/session/new
-Completed in 12ms (DB: 0) | 302 Found [http://localhost/session]
-  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing SessionsController#new (for 127.0.0.1 at 2009-10-27 18:59:43) [GET]
-Rendering template within layouts/application
-Rendering sessions/new
-Completed in 18ms (View: 12, DB: 1) | 200 OK [http://localhost/session/new]
-  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing SessionsController#create (for 127.0.0.1 at 2009-10-27 19:00:01) [POST]
-  Parameters: {"commit"=>"Log in", "authenticity_token"=>"TfPQEDFL0/xZznRb6K1LgZLLhBjGxQ2RdPfovTc0+Mc=", "login"=>"karthik", "password"=>"kil2972"}
-  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'karthik') AND (users.state = 'active') LIMIT 1[0m
-Redirected to http://localhost:3001/session/new
-Completed in 13ms (DB: 3) | 302 Found [http://localhost/session]
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing SessionsController#new (for 127.0.0.1 at 2009-10-27 19:00:02) [GET]
-Rendering template within layouts/application
-Rendering sessions/new
-Completed in 22ms (View: 16, DB: 0) | 200 OK [http://localhost/session/new]
+Completed in 20ms (View: 14, DB: 1) | 200 OK [http://127.0.0.1/]
   [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
   [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing UsersController#activate (for 127.0.0.1 at 2009-10-27 19:01:38) [GET]
-  Parameters: {"activation_code"=>"9517922ef1d990c380e04fed38ef1623fe09a24d"}
-  [4;36;1mUser Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
-  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`activation_code` = '9517922ef1d990c380e04fed38ef1623fe09a24d') LIMIT 1[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
-  [4;35;1mUser Update (52.0ms)[0m   [0mUPDATE `users` SET `activated_at` = '2009-10-27 11:01:38', `activation_code` = NULL, `state` = 'active', `updated_at` = '2009-10-27 19:01:38' WHERE `id` = 1[0m
-  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
-  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
-Redirected to http://localhost:3001/
-Completed in 95ms (DB: 63) | 302 Found [http://localhost/activate/9517922ef1d990c380e04fed38ef1623fe09a24d]
+Processing SessionsController#new (for 127.0.0.1 at 2009-11-06 23:35:42) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 68ms (View: 62, DB: 1) | 200 OK [http://127.0.0.1/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-11-06 23:35:59) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 20ms (View: 14, DB: 2) | 200 OK [http://127.0.0.1/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-11-06 23:36:12) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"3KaxQVFpKCEiHo1fkrA8hSbl/n9yAEpda8TNW8Ww08U=", "login"=>"minutemarker", "password"=>"123456"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'minutemarker') AND (users.state = 'active') LIMIT 1[0m
+  [4;35;1mUser Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Redirected to http://127.0.0.1:3002/stage/index/1
+Completed in 34ms (DB: 12) | 302 Found [http://127.0.0.1/session]
   [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
   [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing SessionsController#new (for 127.0.0.1 at 2009-10-27 19:01:39) [GET]
+Processing StageController#index (for 127.0.0.1 at 2009-11-06 23:36:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mStage Load (1.0ms)[0m   [0;1mSELECT * FROM `stages` WHERE (`stages`.`user_id` = 1) ORDER BY created_at DESC[0m
 Rendering template within layouts/application
-Rendering sessions/new
-Completed in 20ms (View: 13, DB: 0) | 200 OK [http://localhost/]
+Rendering stage/index
+  [4;35;1mStage Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `stages`[0m
+Rendered stage/_show (20.0ms)
+Rendered stage/_show (1.0ms)
+Completed in 1556ms (View: 63, DB: 7) | 200 OK [http://127.0.0.1/stage/index/1]
   [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
   [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing SessionsController#create (for 127.0.0.1 at 2009-10-27 19:02:02) [POST]
-  Parameters: {"commit"=>"Log in", "authenticity_token"=>"TfPQEDFL0/xZznRb6K1LgZLLhBjGxQ2RdPfovTc0+Mc=", "login"=>"karthik", "password"=>"kil2972"}
-  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'karthik') AND (users.state = 'active') LIMIT 1[0m
-  [4;35;1mUser Columns (66.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
-Redirected to http://localhost:3001/stage/index/1
-Completed in 89ms (DB: 68) | 302 Found [http://localhost/session]
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing StageController#index (for 127.0.0.1 at 2009-10-27 19:02:04) [GET]
-  Parameters: {"id"=>"1"}
-  [4;36;1mStage Load (29.0ms)[0m   [0;1mSELECT * FROM `stages` WHERE (`stages`.`user_id` = 1) ORDER BY created_at DESC[0m
-Rendering template within layouts/application
-Rendering stage/index
-Completed in 1396ms (View: 35, DB: 30) | 200 OK [http://localhost/stage/index/1]
-  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing StageController#new (for 127.0.0.1 at 2009-10-27 19:02:16) [GET]
-  Parameters: {"id"=>"1"}
-  [4;35;1mStage Columns (89.0ms)[0m   [0mSHOW FIELDS FROM `stages`[0m
-  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` [0m
-Rendering template within layouts/application
-Rendering stage/new
-Completed in 1434ms (View: 194, DB: 90) | 200 OK [http://localhost/stage/new/1]
-  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing StageController#create (for 127.0.0.1 at 2009-10-27 19:30:05) [POST]
-  Parameters: {"stage"=>{"uploaded_data"=>#<File:C:/Users/User/AppData/Local/Temp/RackMultipart7208-1>}, "commit"=>"Create", "authenticity_token"=>"TfPQEDFL0/xZznRb6K1LgZLLhBjGxQ2RdPfovTc0+Mc="}
-  [4;35;1mStage Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `stages`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
-  [4;35;1mStage Create (18.0ms)[0m   [0mINSERT INTO `stages` (`content_type`, `size`, `updated_at`, `filename`, `user_id`, `ischeck`, `parent_id`, `created_at`) VALUES('application/octet-stream', 0, '2009-10-27 19:30:07', 'video.flv', 1, NULL, NULL, '2009-10-27 19:30:07')[0m
-  [4;36;1mSQL (3.0ms)[0m   [0;1mCOMMIT[0m
-Redirected to http://localhost:3001/stage/index/1
-Completed in 1918ms (DB: 30) | 302 Found [http://localhost/stage/create]
-  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing StageController#index (for 127.0.0.1 at 2009-10-27 19:30:09) [GET]
-  Parameters: {"id"=>"1"}
-  [4;35;1mStage Load (1.0ms)[0m   [0mSELECT * FROM `stages` WHERE (`stages`.`user_id` = 1) ORDER BY created_at DESC[0m
-Rendering template within layouts/application
-Rendering stage/index
-  [4;36;1mStage Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `stages`[0m
-Completed in 1184ms (View: 20, DB: 10) | 200 OK [http://localhost/stage/index/1]
-  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing StageController#show (for 127.0.0.1 at 2009-10-27 19:30:16) [GET]
-  Parameters: {"file"=>"/swf/0000/0001/video.flv"}
-currently trying to convert the video ( /public/swf/0000/0001/video.flv ) path ( /public/swf/0000/0001/video.flv) from content type of /public/swf/0000/0001/video.flv to flv
+Processing StageController#show (for 127.0.0.1 at 2009-11-06 23:36:18) [GET]
+  Parameters: {"name"=>"VIDEO0003.3gp", "file"=>"/swf/0000/0002/VIDEO0003.3gp"}
+  [4;36;1mStage Load (1.0ms)[0m   [0;1mSELECT * FROM `stages` WHERE (`stages`.`user_id` = 1) ORDER BY created_at DESC[0m
+currently trying to convert the video ( /public/swf/0000/0002/VIDEO0003.3gp ) path ( C:/Users/User/My Documents/Aptana RadRails Workspace/zauth2) from content type of /public/swf/0000/0002/VIDEO0003.flv to flv
 Rendering template within layouts/application
 Rendering stage/show
-Completed in 65ms (View: 24, DB: 1) | 200 OK [http://localhost/stage/show?file=%2Fswf%2F0000%2F0001%2Fvideo.flv]
-  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStage Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `stages`[0m
+Rendered stage/_show (16.0ms)
+Rendered stage/_show (1.0ms)
+Completed in 1328ms (View: 43, DB: 8) | 200 OK [http://127.0.0.1/stage/show?file=%2Fswf%2F0000%2F0002%2FVIDEO0003.3gp&name=VIDEO0003.3gp]
+  [4;36;1mSQL (5.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing SessionsController#create (for 127.0.0.1 at 2009-10-27 19:31:07) [POST]
-  Parameters: {"commit"=>"Log in", "authenticity_token"=>"TfPQEDFL0/xZznRb6K1LgZLLhBjGxQ2RdPfovTc0+Mc=", "login"=>"karthik", "password"=>"kil2972"}
-  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'karthik') AND (users.state = 'active') LIMIT 1[0m
-  [4;36;1mUser Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
-Redirected to http://localhost:3001/stage/index/1
-Completed in 29ms (DB: 9) | 302 Found [http://localhost/session]
-  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-06 23:36:20) [GET]
 
-
-Processing StageController#index (for 127.0.0.1 at 2009-10-27 19:31:08) [GET]
-  Parameters: {"id"=>"1"}
-  [4;35;1mStage Load (1.0ms)[0m   [0mSELECT * FROM `stages` WHERE (`stages`.`user_id` = 1) ORDER BY created_at DESC[0m
-Rendering template within layouts/application
-Rendering stage/index
-  [4;36;1mStage Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `stages`[0m
-Completed in 1299ms (View: 21, DB: 7) | 200 OK [http://localhost/stage/index/1]
-  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing StageController#new (for 127.0.0.1 at 2009-10-27 19:31:32) [GET]
-  Parameters: {"id"=>"1"}
-  [4;35;1mStage Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `stages`[0m
-  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` [0m
-Rendering template within layouts/application
-Rendering stage/new
-Completed in 1166ms (View: 12, DB: 8) | 200 OK [http://localhost/stage/new/1]
-  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing StageController#create (for 127.0.0.1 at 2009-10-27 19:31:45) [POST]
-  Parameters: {"stage"=>{"uploaded_data"=>#<File:C:/Users/User/AppData/Local/Temp/RackMultipart7208-0>}, "commit"=>"Create", "authenticity_token"=>"TfPQEDFL0/xZznRb6K1LgZLLhBjGxQ2RdPfovTc0+Mc="}
-  [4;35;1mStage Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `stages`[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
-  [4;35;1mStage Create (1.0ms)[0m   [0mINSERT INTO `stages` (`content_type`, `size`, `updated_at`, `filename`, `user_id`, `ischeck`, `parent_id`, `created_at`) VALUES('audio/x-ms-wma', 0, '2009-10-27 19:31:46', 'Love_Comes.wma', 1, NULL, NULL, '2009-10-27 19:31:46')[0m
-  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
-Redirected to http://localhost:3001/stage/index/1
-Completed in 1994ms (DB: 11) | 302 Found [http://localhost/stage/create]
-  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
-  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing StageController#index (for 127.0.0.1 at 2009-10-27 19:31:48) [GET]
-  Parameters: {"id"=>"1"}
-  [4;35;1mStage Load (1.0ms)[0m   [0mSELECT * FROM `stages` WHERE (`stages`.`user_id` = 1) ORDER BY created_at DESC[0m
-Rendering template within layouts/application
-Rendering stage/index
-  [4;36;1mStage Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `stages`[0m
-Completed in 1165ms (View: 21, DB: 8) | 200 OK [http://localhost/stage/index/1]
-  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing StageController#show (for 127.0.0.1 at 2009-10-27 19:32:02) [GET]
-  Parameters: {"file"=>"/swf/0000/0001/video.flv"}
-currently trying to convert the video ( /public/swf/0000/0001/video.flv ) path ( /public/swf/0000/0001/video.flv) from content type of /public/swf/0000/0001/video.flv to flv
-Rendering template within layouts/application
-Rendering stage/show
-Completed in 48ms (View: 11, DB: 0) | 200 OK [http://localhost/stage/show?file=%2Fswf%2F0000%2F0001%2Fvideo.flv]
-  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing StageController#index (for 127.0.0.1 at 2009-10-28 04:13:19) [GET]
-  Parameters: {"id"=>"1"}
-  [4;35;1mStage Load (2.0ms)[0m   [0mSELECT * FROM `stages` WHERE (`stages`.`user_id` = 1) ORDER BY created_at DESC[0m
-Rendering template within layouts/application
-Rendering stage/index
-  [4;36;1mStage Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `stages`[0m
-Completed in 1518ms (View: 21, DB: 11) | 200 OK [http://localhost/stage/index/1]
-  [4;36;1mSQL (21.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (23.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing SessionsController#new (for 127.0.0.1 at 2009-10-29 18:40:02) [GET]
-Rendering template within layouts/application
-Rendering sessions/new
-Completed in 6910ms (View: 6905, DB: 44) | 200 OK [http://localhost/]
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing SessionsController#create (for 127.0.0.1 at 2009-10-29 18:40:54) [POST]
-  Parameters: {"commit"=>"Log in", "authenticity_token"=>"MTkOCU/gW67Tu/SsILSkUNC6T5Jwdm0TiNidgjXIsm4=", "login"=>"karthik", "password"=>"kil2972"}
-  [4;36;1mUser Load (326.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'karthik') AND (users.state = 'active') LIMIT 1[0m
-  [4;35;1mUser Columns (65.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
-Redirected to http://localhost:3001/stage/index/1
-Completed in 417ms (DB: 392) | 302 Found [http://localhost/session]
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing StageController#index (for 127.0.0.1 at 2009-10-29 18:40:56) [GET]
-  Parameters: {"id"=>"1"}
-  [4;36;1mStage Load (66.0ms)[0m   [0;1mSELECT * FROM `stages` WHERE (`stages`.`user_id` = 1) ORDER BY created_at DESC[0m
-Rendering template within layouts/application
-Rendering stage/index
-  [4;35;1mStage Columns (29.0ms)[0m   [0mSHOW FIELDS FROM `stages`[0m
-Completed in 1932ms (View: 61, DB: 96) | 200 OK [http://localhost/stage/index/1]
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing StageController#show (for 127.0.0.1 at 2009-10-29 18:41:09) [GET]
-  Parameters: {"file"=>"/swf/0000/0002/Love_Comes.wma"}
-currently trying to convert the video ( /public/swf/0000/0002/Love_Comes.wma ) path ( /public/swf/0000/0002/Love_Comes.wma) from content type of /public/swf/0000/0002/Love_Comes.wma to flv
-Rendering template within layouts/application
-Rendering stage/show
-Completed in 97ms (View: 56, DB: 1) | 200 OK [http://localhost/stage/show?file=%2Fswf%2F0000%2F0002%2FLove_Comes.wma]
-  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 18:41:11) [GET]
-
-ActionController::RoutingError (No route matches "/stage/0000/0002/Love_Comes.wma" with {:method=>:get}):
+ActionController::RoutingError (No route matches "/swf/0000/0002/VIDEO0003.flv" with {:method=>:get}):
   -e:2:in `load'
   -e:2
 
@@ -333,9 +82,317 @@ Rendering rescues/layout (not_found)
   [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing StageController#show (for 127.0.0.1 at 2009-10-29 18:41:20) [GET]
-  Parameters: {"file"=>"/swf/0000/0001/video.flv"}
-currently trying to convert the video ( /public/swf/0000/0001/video.flv ) path ( /public/swf/0000/0001/video.flv) from content type of /public/swf/0000/0001/video.flv to flv
+Processing StageController#show (for 127.0.0.1 at 2009-11-06 23:36:51) [GET]
+  Parameters: {"name"=>"VIDEO0003.3gp", "file"=>"/swf/0000/0002/VIDEO0003.3gp"}
+  [4;36;1mStage Load (3.0ms)[0m   [0;1mSELECT * FROM `stages` WHERE (`stages`.`user_id` = 1) ORDER BY created_at DESC[0m
+currently trying to convert the video ( /public/swf/0000/0002/VIDEO0003.3gp ) path ( C:/Users/User/My Documents/Aptana RadRails Workspace/zauth2) from content type of /public/swf/0000/0002/VIDEO0003.flv to flv
 Rendering template within layouts/application
 Rendering stage/show
-Completed in 54ms (View: 12, DB: 0) | 200 OK [http://localhost/stage/show?file=%2Fswf%2F0000%2F0001%2Fvideo.flv]
+  [4;35;1mStage Columns (71.0ms)[0m   [0mSHOW FIELDS FROM `stages`[0m
+Rendered stage/_show (80.0ms)
+Rendered stage/_show (2.0ms)
+Completed in 1542ms (View: 39, DB: 74) | 200 OK [http://127.0.0.1/stage/show?file=%2Fswf%2F0000%2F0002%2FVIDEO0003.3gp&name=VIDEO0003.3gp]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-06 23:36:54) [GET]
+
+ActionController::RoutingError (No route matches "/swf/0000/0002/VIDEO0003.flv" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StageController#show (for 127.0.0.1 at 2009-11-06 23:37:33) [GET]
+  Parameters: {"name"=>"VIDEO0004.3gp", "file"=>"/swf/0000/0001/VIDEO0004.3gp"}
+  [4;36;1mStage Load (1.0ms)[0m   [0;1mSELECT * FROM `stages` WHERE (`stages`.`user_id` = 1) ORDER BY created_at DESC[0m
+currently trying to convert the video ( /public/swf/0000/0001/VIDEO0004.3gp ) path ( C:/Users/User/My Documents/Aptana RadRails Workspace/zauth2) from content type of /public/swf/0000/0001/VIDEO0004.flv to flv
+Rendering template within layouts/application
+Rendering stage/show
+  [4;35;1mStage Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `stages`[0m
+Rendered stage/_show (17.0ms)
+Rendered stage/_show (1.0ms)
+Completed in 1379ms (View: 29, DB: 9) | 200 OK [http://127.0.0.1/stage/show?file=%2Fswf%2F0000%2F0001%2FVIDEO0004.3gp&name=VIDEO0004.3gp]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StageController#show (for 127.0.0.1 at 2009-11-06 23:38:39) [GET]
+  Parameters: {"name"=>"VIDEO0004.3gp", "file"=>"/swf/0000/0001/VIDEO0004.3gp"}
+  [4;36;1mStage Load (2.0ms)[0m   [0;1mSELECT * FROM `stages` WHERE (`stages`.`user_id` = 1) ORDER BY created_at DESC[0m
+currently trying to convert the video ( /public/swf/0000/0001/VIDEO0004.3gp ) path ( C:/Users/User/My Documents/Aptana RadRails Workspace/zauth2) from content type of /public/swf/0000/0001/VIDEO0004.flv to flv
+Rendering template within layouts/application
+Rendering stage/show
+  [4;35;1mStage Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `stages`[0m
+Rendered stage/_show (22.0ms)
+Rendered stage/_show (2.0ms)
+Completed in 1627ms (View: 35, DB: 14) | 200 OK [http://127.0.0.1/stage/show?file=%2Fswf%2F0000%2F0001%2FVIDEO0004.3gp&name=VIDEO0004.3gp]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-11-06 23:53:13) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 60ms (View: 54, DB: 1) | 200 OK [http://127.0.0.1/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-11-06 23:53:25) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"3KaxQVFpKCEiHo1fkrA8hSbl/n9yAEpda8TNW8Ww08U=", "login"=>"minutemarker", "password"=>"123456"}
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'minutemarker') AND (users.state = 'active') LIMIT 1[0m
+  [4;35;1mUser Columns (26.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Redirected to http://127.0.0.1:3002/stage/index/1
+Completed in 57ms (DB: 29) | 302 Found [http://127.0.0.1/session]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StageController#index (for 127.0.0.1 at 2009-11-06 23:53:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mStage Load (1.0ms)[0m   [0;1mSELECT * FROM `stages` WHERE (`stages`.`user_id` = 1) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering stage/index
+  [4;35;1mStage Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `stages`[0m
+Rendered stage/_show (19.0ms)
+Rendered stage/_show (1.0ms)
+Completed in 1690ms (View: 205, DB: 9) | 200 OK [http://127.0.0.1/stage/index/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StageController#show (for 127.0.0.1 at 2009-11-06 23:53:34) [GET]
+  Parameters: {"name"=>"VIDEO0003.3gp", "file"=>"/swf/0000/0002/VIDEO0003.3gp"}
+  [4;36;1mStage Load (1.0ms)[0m   [0;1mSELECT * FROM `stages` WHERE (`stages`.`user_id` = 1) ORDER BY created_at DESC[0m
+currently trying to convert the video ( /public/swf/0000/0002/VIDEO0003.3gp ) path ( C:/Users/User/My Documents/Aptana RadRails Workspace/zauth2) from content type of /public/swf/0000/0002/VIDEO0003.flv to flv
+Rendering template within layouts/application
+Rendering stage/show
+  [4;35;1mStage Columns (11.0ms)[0m   [0mSHOW FIELDS FROM `stages`[0m
+Rendered stage/_show (21.0ms)
+Rendered stage/_show (1.0ms)
+Completed in 1324ms (View: 42, DB: 12) | 200 OK [http://127.0.0.1/stage/show?file=%2Fswf%2F0000%2F0002%2FVIDEO0003.3gp&name=VIDEO0003.3gp]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-06 23:53:36) [GET]
+
+ActionController::RoutingError (No route matches "/swf/0000/0002/VIDEO0003.flv" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StageController#show (for 127.0.0.1 at 2009-11-06 23:54:02) [GET]
+  Parameters: {"name"=>"VIDEO0003.3gp", "file"=>"/swf/0000/0002/VIDEO0003.3gp"}
+  [4;36;1mStage Load (1.0ms)[0m   [0;1mSELECT * FROM `stages` WHERE (`stages`.`user_id` = 1) ORDER BY created_at DESC[0m
+currently trying to convert the video ( /public/swf/0000/0002/VIDEO0003.3gp ) path ( C:/Users/User/My Documents/Aptana RadRails Workspace/zauth2) from content type of /public/swf/0000/0002/VIDEO0003.flv to flv
+Rendering template within layouts/application
+Rendering stage/show
+  [4;35;1mStage Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `stages`[0m
+Rendered stage/_show (19.0ms)
+Rendered stage/_show (1.0ms)
+Completed in 1540ms (View: 28, DB: 12) | 200 OK [http://127.0.0.1/stage/show?file=%2Fswf%2F0000%2F0002%2FVIDEO0003.3gp&name=VIDEO0003.3gp]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-06 23:54:05) [GET]
+
+ActionController::RoutingError (No route matches "/swf/0000/0002/VIDEO0003.flv" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-07 01:16:22) [GET]
+
+ActionController::RoutingError (No route matches "/swf/0000/0002/VIDEO0003.flv" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-07 01:16:23) [GET]
+
+ActionController::RoutingError (No route matches "/swf/0000/0002/VIDEO0003.flv" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StageController#show (for 127.0.0.1 at 2009-11-07 01:16:29) [GET]
+  Parameters: {"name"=>"VIDEO0004.3gp", "file"=>"/swf/0000/0001/VIDEO0004.3gp"}
+  [4;36;1mStage Load (2.0ms)[0m   [0;1mSELECT * FROM `stages` WHERE (`stages`.`user_id` = 1) ORDER BY created_at DESC[0m
+currently trying to convert the video ( /public/swf/0000/0001/VIDEO0004.3gp ) path ( C:/Users/User/My Documents/Aptana RadRails Workspace/zauth2) from content type of /public/swf/0000/0001/VIDEO0004.flv to flv
+Rendering template within layouts/application
+Rendering stage/show
+  [4;35;1mStage Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `stages`[0m
+Rendered stage/_show (17.0ms)
+Rendered stage/_show (1.0ms)
+Completed in 1572ms (View: 27, DB: 12) | 200 OK [http://127.0.0.1/stage/show?file=%2Fswf%2F0000%2F0001%2FVIDEO0004.3gp&name=VIDEO0004.3gp]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-11-07 10:51:32) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 6983ms (View: 6978, DB: 0) | 200 OK [http://127.0.0.1/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-11-07 10:51:49) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"KLywXuWM3L+GyAiPxTEsMIEBP2swYFedXKkEoo483+c=", "login"=>"karthikraja", "password"=>"kil2972"}
+  [4;36;1mUser Load (148.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'karthikraja') AND (users.state = 'active') LIMIT 1[0m
+Redirected to http://127.0.0.1:3002/session/new
+Completed in 160ms (DB: 149) | 302 Found [http://127.0.0.1/session]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-11-07 10:51:50) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 23ms (View: 16, DB: 1) | 200 OK [http://127.0.0.1/session/new]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-11-07 10:52:00) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"KLywXuWM3L+GyAiPxTEsMIEBP2swYFedXKkEoo483+c=", "login"=>"minutemarker", "password"=>"vetri123"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'minutemarker') AND (users.state = 'active') LIMIT 1[0m
+  [4;36;1mUser Columns (36.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Redirected to http://127.0.0.1:3002/session/new
+Completed in 62ms (DB: 38) | 302 Found [http://127.0.0.1/session]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-11-07 10:52:00) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 20ms (View: 14, DB: 1) | 200 OK [http://127.0.0.1/session/new]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-07 10:52:04) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 101ms (View: 95, DB: 1) | 200 OK [http://127.0.0.1/signup]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-07 10:52:24) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"kil2972", "password"=>"kil2972", "login"=>"karthikraja", "email"=>"karthikraja.sr@gmail.com"}, "commit"=>"Sign up", "authenticity_token"=>"KLywXuWM3L+GyAiPxTEsMIEBP2swYFedXKkEoo483+c="}
+  [4;35;1mUser Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Exists (67.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'karthikraja') LIMIT 1[0m
+  [4;35;1mUser Exists (1.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'karthikraja.sr@gmail.com') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Create (20.0ms)[0m   [0mINSERT INTO `users` (`salt`, `activated_at`, `updated_at`, `crypted_password`, `deleted_at`, `activation_code`, `remember_token_expires_at`, `password_reset_code`, `remember_token`, `login`, `email`, `state`, `created_at`) VALUES('3424f789e5a97c43f8e9e66b1ad56d75a851df21', NULL, '2009-11-07 10:52:25', '780570c99b82c72b5c79c8f3870ee00554be9566', NULL, 'd30bc179bb79e06ce8be5c44ea7fa59421e2e53f', NULL, NULL, NULL, 'karthikraja', 'karthikraja.sr@gmail.com', 'pending', '2009-11-07 10:52:25')[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Sent mail to karthikraja.sr@gmail.com
+
+Date: Sat, 7 Nov 2009 10:52:25 +0800
+To: karthikraja.sr@gmail.com
+Subject: [MinuteMarker Android App] New account information Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+Your account has been created.
+
+  Username: karthikraja
+  Password: kil2972
+
+Visit this url to activate your account:
+
+  http://127.0.0.1:3003/activate/d30bc179bb79e06ce8be5c44ea7fa59421e2e53f
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+  [4;36;1mSQL (23.0ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/create
+Completed in 10369ms (View: 68, DB: 123) | 200 OK [http://127.0.0.1/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#activate (for 127.0.0.1 at 2009-11-07 10:52:56) [GET]
+  Parameters: {"activation_code"=>"d30bc179bb79e06ce8be5c44ea7fa59421e2e53f"}
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`activation_code` = 'd30bc179bb79e06ce8be5c44ea7fa59421e2e53f') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (26.0ms)[0m   [0;1mUPDATE `users` SET `activated_at` = '2009-11-07 02:52:56', `activation_code` = NULL, `state` = 'active', `updated_at` = '2009-11-07 10:52:56' WHERE `id` = 2[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+  [4;36;1mSQL (17.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3002/
+Completed in 83ms (DB: 54) | 302 Found [http://127.0.0.1/activate/d30bc179bb79e06ce8be5c44ea7fa59421e2e53f]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-11-07 10:52:57) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 27ms (View: 21, DB: 1) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-11-07 10:53:06) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"KLywXuWM3L+GyAiPxTEsMIEBP2swYFedXKkEoo483+c=", "login"=>"karthikraja", "password"=>"kil2972"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'karthikraja') AND (users.state = 'active') LIMIT 1[0m
+  [4;36;1mUser Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Redirected to http://127.0.0.1:3002/stage/index/2
+Completed in 33ms (DB: 10) | 302 Found [http://127.0.0.1/session]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StageController#index (for 127.0.0.1 at 2009-11-07 10:53:06) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mStage Load (2.0ms)[0m   [0mSELECT * FROM `stages` WHERE (`stages`.`user_id` = 2) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering stage/index
+Completed in 1451ms (View: 43, DB: 3) | 200 OK [http://127.0.0.1/stage/index/2]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StageController#new (for 127.0.0.1 at 2009-11-07 10:54:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mStage Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `stages`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/application
+Rendering stage/new
+Completed in 1520ms (View: 228, DB: 12) | 200 OK [http://127.0.0.1/stage/new/2]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StageController#new (for 127.0.0.1 at 2009-11-07 10:54:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mStage Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `stages`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/application
+Rendering stage/new
+Completed in 1312ms (View: 23, DB: 7) | 200 OK [http://127.0.0.1/stage/new/2]

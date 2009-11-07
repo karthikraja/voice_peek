@@ -1,27 +1,31 @@
 <div id="main_container">
+  <%= error_messages_for :stage %>
   <div id="header">
     <ul>
       <li><span id="current"><%= link_to 'New upload', :action=>'new', :id=>session[:user_id]%></span></li>
+      <li><span><%= link_to 'View',:action=>'index',:id=>session[:user_id] %></span></li>
       <li><span><%= link_to "Logout", logout_url %></span></li>
     </ul>
   </div>
-  <div id="flash_msg">
+  <div id="middle_box_content">
+    <% form_for(:stage, :url => { :action => "create" },
+      :html => { :multipart => true }) do |f| -%>
+      <p>
+        <label for="upload_data">Upload the Audio/Video:</label>
+        <%= f.file_field :uploaded_data %>
+      </p>
+      <p>
+        <%= f.label :comments,'Description' %>
+       <%= f.text_area :ischeck %>
+      <p>
+        <%= submit_tag 'Create' %>
+      </p>
+
+
+    <% end -%>
+
+    <div id="flash_msg">
       <span><p style="color: blue;"><%= flash[:notice] %></p></span>
     </div>
-  <h1>Listing Audio/Video : </h1><h4>Click on the link to play the clip</h4>
-
-  
-  <div id="middle_box_content">
-
-    <ul id="stage">
-      <%= render :partial=>'show', :collection=>@stages, :as=> :stage %>
-     
-    </ul>
-    <br />
-   
-    
   </div>
 </div>
-
-
-
