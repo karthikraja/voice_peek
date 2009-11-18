@@ -42,7 +42,7 @@ class StageController < ApplicationController
       system("ffmpeg -i #{RAILS_ROOT + @file} -ar 44100  -ac 2 -vol 1024 -ab 64 -s 480x360 -acodec libmp3lame -vcodec flv -r 25 -qscale 8 -b 25000000 -acodec libmp3lame -f flv -y #{ RAILS_ROOT+@target_file }")
   end
   
-  def uploaddata
+  def upload
     self.current_user = User.authenticate(params[:login], params[:password])
     if logged_in?
       if params[:remember_me] == "1"
