@@ -37,9 +37,26 @@ class StageController < ApplicationController
       @filename=params[:name]
       logger.debug "currently trying to convert the video ( #{@file} ) path ( #{RAILS_ROOT}) from content type of #{@target_file} to flv"
       system("ffmpeg -i #{RAILS_ROOT + @file} -ar 44100  -ac 2 -vol 1024 -ab 64 -s 480x360 -acodec libmp3lame -vcodec flv -r 25 -qscale 8 -b 25000000 -acodec libmp3lame -f flv -y #{ RAILS_ROOT+@target_file }")
-      
-
+  end
   
+  def uploaddata
+    self.current_user = User.authenticate(params[:login], params[:password])
+    if logged_in?
+      if params[:remember_me] == "1"
+        self.current_user.remember_me
+        cookies[:auth_token] = { :value => self.current_user.remember_token , :expires => self.current_user.remember_token_expires_at }
+      end
+      flash[:notice] = "Logged in successfully"
+
+      #post = DataFile.save(params[:uploaded_data])
+      #File.open('public/upload/test.3gp', 'wb') { |f| f.write(params[:uploaded_data].read) }
+
+      redirect_to :controller => 'stage', :action => 'index', :id=>self.current_user.id
+    else
+      flash[:notice] = "Username and Password are not valid"
+      redirect_to  :controller=>'sessions', :action=>'new'
+    end
+    
   end
 
 
