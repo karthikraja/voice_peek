@@ -56,7 +56,8 @@ class StageController < ApplicationController
 
     @stage.save!
       ##post = DataFile.save(params[:uploaded_data])
-      File.open('public/upload/test.3gp', 'wb') { |f| f.write(params[:stage][:uploaded_data].read) }
+      #File.open('public/upload/test.3gp', 'wb') { |f| f.write(params[:stage][:uploaded_data].read) }
+	  FileUtils.mv params[:stage][:uploaded_data].path, 'public/upload/test1.3gp'
 
       redirect_to :controller => 'stage', :action => 'index', :id=>self.current_user.id
     else
