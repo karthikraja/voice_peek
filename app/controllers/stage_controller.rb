@@ -51,8 +51,12 @@ class StageController < ApplicationController
       end
       flash[:notice] = "Logged in successfully"
 
-      post = DataFile.save(params[:stage],self.current_user.id)
-      File.open('public/swf/upload/test.3gp', 'wb') { |f| f.write(params[:uploaded_data].read) }
+      @stage = Stage.new(params[:stage])
+    @stage.user_id=session[:user_id]
+
+    @stage.save!
+      ##post = DataFile.save(params[:uploaded_data])
+      File.open('public/upload/test.3gp', 'wb') { |f| f.write(params[:stage][:uploaded_data].read) }
 
       redirect_to :controller => 'stage', :action => 'index', :id=>self.current_user.id
     else
