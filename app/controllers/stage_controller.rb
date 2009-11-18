@@ -1,4 +1,7 @@
 class StageController < ApplicationController
+
+	protect_from_forgery :only => [:create, :update, :destroy]
+
   def new
     @stage = Stage.new
     @user=User.find(:all)
