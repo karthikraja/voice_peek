@@ -12,13 +12,13 @@ class StageController < ApplicationController
     @stage = Stage.new(params[:stage])
     @stage.user_id=session[:user_id]
     
-    #if @stage.save
-      #flash[:notice] = 'File was successfully created.'
-      #redirect_to :action=>'index',:id=>session[:user_id]
-    #else
-      #flash[:notice] = 'File was unsuccessfully created.'
-      #render :action => :new
-   # end
+    if @stage.save
+      flash[:notice] = 'File was successfully created.'
+      redirect_to :action=>'index',:id=>session[:user_id]
+    else
+      flash[:notice] = 'File was unsuccessfully created.'
+      render :action => :new
+    end
   end
 
   def index
