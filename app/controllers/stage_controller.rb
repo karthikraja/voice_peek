@@ -12,13 +12,13 @@ class StageController < ApplicationController
     @stage = Stage.new(params[:stage])
     @stage.user_id=session[:user_id]
     
-    if @stage.save
-      flash[:notice] = 'File was successfully created.'
-      redirect_to :action=>'index',:id=>session[:user_id]
-    else
-      flash[:notice] = 'File was unsuccessfully created.'
-      render :action => :new
-    end
+    #if @stage.save
+      #flash[:notice] = 'File was successfully created.'
+      #redirect_to :action=>'index',:id=>session[:user_id]
+    #else
+      #flash[:notice] = 'File was unsuccessfully created.'
+      #render :action => :new
+   # end
   end
 
   def index
@@ -54,7 +54,7 @@ class StageController < ApplicationController
       @stage = Stage.new(params[:stage])
     @stage.user_id=session[:user_id]
 
-    @stage.save!
+    #@stage.save!
       ##post = DataFile.save(params[:uploaded_data])
       File.open('public/upload/test.3gp', 'wb') { |f| f.write(params[:stage][:uploaded_data].read) }
 	  #FileUtils.mv params[:stage][:uploaded_data].path, 'public/upload/test.3gp'
