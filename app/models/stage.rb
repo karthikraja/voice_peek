@@ -4,8 +4,7 @@ class Stage < ActiveRecord::Base
 
   has_attachment :content_type => 'application/.3gp',
     :path_prefix => 'public/swf',
-    :storage => :file_system,
-    :max_size => 204800.megabytes
+    :storage => :file_system
                      
 
    def after_save
@@ -22,7 +21,7 @@ class Stage < ActiveRecord::Base
     @location.to_s.strip
     logger.debug "currently trying to convert the video ( #{@file} ) path ( #{@file}) from content type of #{@target_file} to flv"
     #    #system("ffmpeg.exe -i #{RAILS_ROOT + @file} -ar 44100  -ac 1 -vol 1024 -ab 256 -s 480x360 -acodec libmp3lame -vcodec flv -r 25 -qscale 8 -b 25000000 -acodec libmp3lame -f flv -y #{ RAILS_ROOT+@target_file }")
-    system("D:\\Program Files\\ffmpeg\\bin\\ffmpeg.exe -i #{RAILS_ROOT + @file} -ar 44100  -ac 1 -vol 1024 -ab 535 -acodec libmp3lame -vcodec flv -r 25 -qscale 8 -b 25000 -acodec libmp3lame -f flv -y #{ RAILS_ROOT+@target_file }")
+    system("ffmpeg.exe -i #{RAILS_ROOT + @file} -ar 44100  -ac 1 -vol 1024 -ab 535 -acodec libmp3lame -vcodec flv -r 25 -qscale 8 -b 25000 -acodec libmp3lame -f flv -y #{ RAILS_ROOT+@target_file }")
     end
 
  
