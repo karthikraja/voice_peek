@@ -32,14 +32,15 @@ class StageController < ApplicationController
   end
 
   def show
-      @stages = Stage.find(:all, :conditions => {:user_id => session[:user_id]}, :order => 'created_at DESC')
-      @file= '/public'+params[:file]
-      @target_file=@file.gsub('.3gp','.flv')
-      @location=@target_file.gsub('/public/swf/','')
-      @location.to_s.strip
-      @filename=params[:name]
-      logger.debug "currently trying to convert the video ( #{@file} ) path ( #{RAILS_ROOT}) from content type of #{@target_file} to flv"
-      system("ffmpeg -i #{RAILS_ROOT + @file} -ar 44100  -ac 2 -vol 1024 -ab 64 -s 480x360 -acodec libmp3lame -vcodec flv -r 25 -qscale 8 -b 25000000 -acodec libmp3lame -f flv -y #{ RAILS_ROOT+@target_file }")
+    @stages = Stage.find(:all, :conditions => {:user_id => session[:user_id]}, :order => 'created_at DESC')
+    @file= '/public'+params[:file]
+    @target_file=@file.gsub('.3gp','.flv')
+    @location=@target_file.gsub('/public/swf/','')
+    @location.to_s.strip
+#    logger.debug "currently trying to convert the video ( #{@file} ) path ( #{@file}) from content type of #{@target_file} to flv"
+#    #    #system("ffmpeg.exe -i #{RAILS_ROOT + @file} -ar 44100  -ac 1 -vol 1024 -ab 256 -s 480x360 -acodec libmp3lame -vcodec flv -r 25 -qscale 8 -b 25000000 -acodec libmp3lame -f flv -y #{ RAILS_ROOT+@target_file }")
+#    system("D:\\Program Files\\ffmpeg\\bin\\ffmpeg.exe -i #{RAILS_ROOT + @file} -ar 44100  -ac 1 -vol 1024 -ab 65535 -s 480x360 -acodec libmp3lame -vcodec flv -r 25 -qscale 8 -b 25000000 -acodec libmp3lame -f flv -y #{ RAILS_ROOT+@target_file }")
+    @filename=params[:name]
   end
   
   def upload

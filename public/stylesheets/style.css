@@ -193,3 +193,6 @@ textarea {
 #header {
     float:right;
 }
+#form{
+    display:inline-block;
+}
